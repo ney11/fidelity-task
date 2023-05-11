@@ -1,0 +1,33 @@
+<div class="create">
+    <div class="create-comments" style="width: 50%;">
+        <h2 style="margin: auto;text-align: center;">Please enter your comment...</h2>
+        <mat-card>
+            <mat-spinner *ngIf="isLoading"></mat-spinner>
+           <form [formGroup]="form" (submit)="onSaveList()"  *ngIf="!isLoading">
+            <mat-form-field>
+                <input matInput
+                 type="text"
+                 name="title"
+                formControlName="title"
+                placeholder="Add Name Here"
+               >
+                <mat-error *ngIf="form.get('title').invalid">Please enter name</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <textarea 
+                matInput 
+                formControlName="content"
+                rows="4" 
+                placeholder="Add Comment Here"
+                ></textarea>
+                <mat-error *ngIf="form.get('content').invalid">Please enter comment</mat-error>
+            </mat-form-field><br>
+            <button mat-raised-button type="submit" [disabled]="form.invalid" color="accent">Post Comment</button>
+           </form>
+        </mat-card>
+    </div>
+    
+    <div class="comments-list" style="width: 50%;">
+        <app-list-post></app-list-post>
+    </div>
+</div>
