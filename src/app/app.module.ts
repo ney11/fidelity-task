@@ -22,8 +22,9 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { AuthInterceptor } from './auth/auth-interceptor';
 import { ErrorInterceptor } from './error-interceptor';
 import { ErrorComponent } from './error/error.component';
-
+import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 // import { FlexLayoutModule } from '@angular/flex-layout';  
 
@@ -53,7 +54,9 @@ import {MatIconModule} from '@angular/material/icon';
     MatExpansionModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule,
+    MatTooltipModule
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}

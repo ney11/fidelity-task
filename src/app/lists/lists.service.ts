@@ -63,7 +63,7 @@ export class ListsService {
         list.id = id;
         this.lists.push(list);
         this.listsUpdated.next([...this.lists]);
-        this.router.navigate(['/create-list']);
+        this.router.navigate(['/list']);
       });
     }
 
@@ -81,7 +81,7 @@ export class ListsService {
             updatedLists[oldListIndex] = list;
             this.lists = updatedLists;
             this.listsUpdated.next([...this.lists]);
-            this.router.navigate(['/create-list']);
+            this.router.navigate(['/list']);
         })
     }
 

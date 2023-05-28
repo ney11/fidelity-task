@@ -1,13 +1,16 @@
 :host {
     display: block;
-    /* margin-top: 1.5rem; */
+     margin-top: 1.5rem; 
 }
 
 mat-spinner {
     margin: auto;
 }
+table {
+    width: 100%;
+  }
 
-mat-expansion-panel {
+/* mat-expansion-panel {
     margin:0.5em;
 }
 .avtar {
@@ -15,4 +18,4 @@ mat-expansion-panel {
     height: 50px;
     border-radius: 50%;
     margin: auto;
-}
+} */

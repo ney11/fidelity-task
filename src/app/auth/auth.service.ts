@@ -2,11 +2,9 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { Subject } from "rxjs";
-// import { environment } from "src/environments/environment";
 import { Auth } from "./auth.model";
 import { environment } from "src/environments/environment.prod";
 
-// const BACKEND_URL = "http://localhost:3000/api/user/";
 const BACKEND_URL = environment.apiUrl + "/user/";
 
 @Injectable({providedIn: 'root'})
@@ -17,7 +15,7 @@ export class AuthService {
     private tokenTimer: any;
     private userId: string | any;
     private authStatusListner = new Subject<boolean>()
-    // const BACKEND_URL = environment.apiUrl + "/user/";
+
     constructor(private http: HttpClient, private router: Router){}
 
     getToken(){
@@ -62,7 +60,7 @@ export class AuthService {
             const expiratioDate = new Date(now.getTime() + expiedDuration*1000);
             console.log('expiratioDate',expiratioDate);
             this.saveAuthData(token,expiratioDate, this.userId);
-            this.router.navigate(['/create-list']);
+            this.router.navigate(['/list']);
             }
         }, error=> {
             this.authStatusListner.next(false);

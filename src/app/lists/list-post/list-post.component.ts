@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/auth/auth.service';
 import { List } from '../list.model';
 import { ListsService } from '../lists.service';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-list-post',
@@ -17,6 +18,10 @@ export class ListPostComponent implements OnInit, OnDestroy{
   private authStatusSub: Subscription = new Subscription;
   isLoading = false;
 
+  displayedColumns: string[] = [ 'position','name', 'designation','edit', 'delete'];
+
+  dataSource: any[]=[];
+
   constructor(private listsService: ListsService,private authService: AuthService){}
 
   ngOnInit(): void { 
@@ -26,6 +31,8 @@ export class ListPostComponent implements OnInit, OnDestroy{
     this.listSub = this.listsService.getlistUpdatedListner().subscribe((lists: List[])=> {
       this.isLoading =false;
       this.posts = lists;
+      this.dataSource = lists;
+      // this.dataSource= new MatTableDataSource(lists);
     })
     this.userIsAthenticated = this.authService.getAuth();
     this.authStatusSub = this.authService.getAuthStatusListner().subscribe(isAthenticated=> {

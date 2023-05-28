@@ -1,10 +1,10 @@
 <mat-toolbar color="primary">
-    <span><a routerLink="/create-list"><img src="../../assets/images/avtar.png.png" alt="avtar" class="avtar"></a></span>
+    <span><a ><img src="../../assets/images/avtar.png.png" alt="avtar" class="avtar"></a></span>
     <span class="spacer"></span>
     <ul>
-        <!-- <li *ngIf="userisAunthenticated">
-            <a mat-button routerLink="/create-list" routerLinkActive="mat-accent">Add List</a>
-        </li> -->
+        <li *ngIf="userisAunthenticated">
+            <a mat-button routerLink="/create-list" routerLinkActive="mat-accent">Add Employee List</a>
+        </li> 
         <li *ngIf="!userisAunthenticated">
             <a mat-button routerLink="/" routerLinkActive="mat-accent">Login</a>
         </li>

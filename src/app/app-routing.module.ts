@@ -8,7 +8,7 @@ import { ListPostComponent } from './lists/list-post/list-post.component';
 
 
 const routes: Routes = [
-  // {path: 'list', component: ListPostComponent,canActivate: [AuthGaurd]},
+  {path: 'list', component: ListPostComponent,canActivate: [AuthGaurd]},
   {path: 'create-list', component: ListCreateComponent, canActivate: [AuthGaurd]},
   {path: 'edit/:listId', component: ListCreateComponent, canActivate: [AuthGaurd]},
   {path: '', component: LoginComponent},

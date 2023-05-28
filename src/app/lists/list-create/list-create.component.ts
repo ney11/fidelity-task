@@ -58,7 +58,6 @@ export class ListCreateComponent implements OnInit{
     this.isLoading = true;
     if(this.mode === 'create'){
       this.listsService.addList(this.form.value.title,this.form.value.content);
-      window.location.reload();
     } else {
       this.listsService.updateList(
         this.listId,

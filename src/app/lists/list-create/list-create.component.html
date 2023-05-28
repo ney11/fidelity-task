@@ -1,6 +1,6 @@
 <div class="create">
-    <div class="create-comments" style="width: 50%;">
-        <h2 style="margin: auto;text-align: center;">Please enter your comment...</h2>
+    <div class="create-comments" >
+        <h2 style="margin: auto;text-align: center;">Please add employee here...</h2>
         <mat-card>
             <mat-spinner *ngIf="isLoading"></mat-spinner>
            <form [formGroup]="form" (submit)="onSaveList()"  *ngIf="!isLoading">
@@ -18,16 +18,14 @@
                 matInput 
                 formControlName="content"
                 rows="4" 
-                placeholder="Add Comment Here"
+                placeholder="Add Designation Here"
                 ></textarea>
-                <mat-error *ngIf="form.get('content').invalid">Please enter comment</mat-error>
+                <mat-error *ngIf="form.get('content').invalid">Please enter designation</mat-error>
             </mat-form-field><br>
-            <button mat-raised-button type="submit" [disabled]="form.invalid" color="accent">Post Comment</button>
+            <button mat-raised-button type="submit" [disabled]="form.invalid" color="accent">Save Employee</button>
+            <button mat-raised-button [routerLink]="['/list']" style="float: right;">Back</button>
            </form>
         </mat-card>
     </div>
     
-    <div class="comments-list" style="width: 50%;">
-        <app-list-post></app-list-post>
-    </div>
 </div>
