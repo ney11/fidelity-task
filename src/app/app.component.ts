@@ -8,7 +8,7 @@ import { List } from './lists/list.model'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title = 'emirates-task';
+  title = 'fidelity-task';
   constructor(private authService: AuthService) {}
   ngOnInit(): void {
     this.authService.autoAuthUser();
